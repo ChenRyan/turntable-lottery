@@ -52,7 +52,7 @@
 /**
  * 
  * @param {转盘渲染节点id， 默认id名 translate} el 
- * @param {转盘数据[{title, img, color},...]} list 
+ * @param {转盘数据[{title, img, bgColor, txtColor},...]} list 
  * @param {转盘的宽度，格式：{width:400 }} style 
  * @param {是否自定义指针：非空则隐藏自定义指针，建议自定义指针样式，使得表盘更加美观} pointer 
  * @returns 
@@ -78,3 +78,5 @@ document.querySelector(".pointer").onclick = function(){
 }
 
 ```
+
+> 来源：[chenxw  gitee仓库地址](https://gitee.com/ryanchenxw/turntable-lottery.git)
