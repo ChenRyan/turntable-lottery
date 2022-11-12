@@ -1,4 +1,7 @@
 /**
+ * @author chenxw
+ * @email 956137998@qq.com
+ * 
  * 
  * @param {转盘渲染节点id， 默认id名 translate} el 
  * @param {转盘数据[{title, img, color},...]} list 

@@ -79,6 +79,9 @@ document.querySelector(".pointer").onclick = function(){
 
 ```
 
+![image-20221112](./images/转盘效果图.png)
+
+
 > 来源：[chenxw  gitee仓库地址](https://gitee.com/ryanchenxw/turntable-lottery.git)
 
 > 来源：[chenxw  github仓库地址](https://github.com/ChenRyan/turntable-lottery)
