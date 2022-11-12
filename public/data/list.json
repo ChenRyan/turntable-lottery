@@ -1,0 +1,37 @@
+{
+    "data":[
+        {
+            "title":"1元",
+            "img": "./assets/1.png",
+            "bgColor":"#ffeaa7",
+            "txtColor":"#111"
+        },
+        {
+            "title":"2元",
+            "img": "./assets/2.png",
+            "bgColor":"#fcf9f0",
+            "txtColor":"#111"
+        },
+        {
+            "title":"5元",
+            "bgColor":"#ffeaa7",
+            "img": "./assets/5.png"
+        },
+         {
+            "title":"谢谢参与",
+            "bgColor":"#fcf9f0",
+            "img": "./assets/0.png"
+        },
+        {
+            "title":"20元",
+            "bgColor":"#ffeaa7",
+            "img": "./assets/20.png"
+        },
+        {
+            "title":"50元",
+            "bgColor":"#fcf9f0",
+            "txtColor": "red",
+            "img": "./assets/50.png"
+        }
+    ]
+}
