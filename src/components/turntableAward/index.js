@@ -24,15 +24,14 @@ export default function Index() {
   
 // 绘制转盘
 async function initCanvas(){
-        if ( isInit ) {
-            console.log('isInit', isInit);
+        if ( isInit || turntableConfig.list.length === 0) {
             return
         }
-        console.log('isInit true', isInit);
+        // console.log('isInit true', isInit);
+        // console.log('list ', turntableConfig.list);
         setisInit(true)
         const canvas = document.querySelector('canvas')
         canvas.width = canvas.height = turntableConfig.width
-        console.log(canvas);
         let ctx = canvas.getContext('2d')
         ctx.clearRect(0,0,canvas.width, canvas.height)
         ctx.translate( canvas.width/2 , canvas.height / 2)
@@ -83,7 +82,7 @@ async function initCanvas(){
 
   function onPointerClick(){
     let index = parseInt(Math.random()*5)
-    rotate(index)
+    rotate(index, 2, 2)
   }
   function rotate( index, rotateNum = 3, duration = 3) {
 
@@ -100,8 +99,6 @@ async function initCanvas(){
 
     // 获取当前的currentIndex
     let currentIndex = turntableConfig.currentIndex
-
-  
     
     // 在现在的基础上重新计算转盘
     let num = turntableConfig.list.length || 0
@@ -118,9 +115,9 @@ async function initCanvas(){
         ...turntableConfig, 
         rotateState: false,
         // 默认3秒
-        duration:3,
+        duration: duration || 3,
         // 默认3圈
-        rotateNum:3,
+        rotateNum:rotateNum || 3,
         currentIndex:index,
         currentRotate:rotateDeg
      })

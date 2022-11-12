@@ -1,9 +1,5 @@
 ## 转盘抽奖react版
 
-## 特别说明
-
-开发模式转盘有重叠bug,打包后可以正常使用
-
 
 ## Available Scripts
 

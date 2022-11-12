@@ -1,18 +1,13 @@
-export default function(func, duration){
+export default function(func, delay){
 
-    let timer = null
     var lasttime = 0
 
-    return ()=>{
-        let nowtime = new Date().getTime()
+    return function(){
+       let nowtime = new Date().getTime()
 
-       console.log(lasttime, nowtime);
-       if ( timer && nowtime - lasttime < duration){
-            return
-        }
+       if ( nowtime - lasttime > delay){
         lasttime = nowtime
-        timer = setTimeout(()=>{
-            func(...arguments)
-        }, 500)
+        func.apply(this, arguments)
+        }
     }
 }
