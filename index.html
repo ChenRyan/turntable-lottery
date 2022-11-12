@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/turntableAward.js"></script>
+    <style>
+      
+        .pointer{
+            position: absolute;
+            width: 10%;
+            height: 10%;
+            top: 45%;
+            left: 45%;
+            background: red;
+            /* background: #ddd; */
+            z-index: 2;
+            border-radius: 50%;
+        }
+        /* 小尖角 */
+        .pointer::after{
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            left: calc(50% - 10px);
+            top: calc(50% - 90px);
+            border-top: 40px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 40px solid red;
+            /* border-bottom: 40px solid #ddd; */
+            border-left: 10px solid transparent;
+            position: absolute;
+            z-index: 99;
+        }
+        #translate{
+            width: 460px;
+            height: 468px;
+            background: url('./images/turnplate-bg.png') top/cover no-repeat;
+            position: relative;
+            border-radius: 50%;
+            /* overflow: hidden; */
+        }
+
+        #translate canvas{
+               width: 400px;
+               height: 400px;
+               position: absolute;
+               left: 30px;
+               top: 30px;
+        }
+
+        /* 重写指针样式 */
+        .pointer::after{
+            display: none;
+        }
+        .pointer{
+            width: calc(185px/2);
+            height: calc(254px/2);
+            top: calc(50% - 90px);
+            left: calc(50% - 46px);
+            background: url(./images/p9-pointer.png) no-repeat top/cover;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="translate">
+        <!-- 指针可自定义 不加则默认指针-->
+        <div class="pointer"></div>
+    </div>
+    <script>
+        const list = [
+            {
+                title:'1元',
+                img: './images/1.png',
+                bgColor:'#ffeaa7',
+                txtColor:'#111'
+            },
+            {
+                title:'2元',
+                img: './images/2.png',
+                bgColor:'#fcf9f0',
+                txtColor:'#111'
+            },
+            {
+                title:'5元',
+                bgColor:'#ffeaa7',
+                img: './images/5.png'
+            },
+             {
+                title:'谢谢参与',
+                bgColor:'#fcf9f0',
+                img: './images/0.png'
+            },
+            {
+                title:'20元',
+                bgColor:'#ffeaa7',
+                img: './images/20.png'
+            },
+            {
+                title:'50元',
+                bgColor:'#fcf9f0',
+                txtColor: "red",
+                img: './images/50.png'
+            },
+            {
+                title:'5元',
+                bgColor:'#ffeaa7',
+                img: './images/5.png'
+            },
+             {
+                title:'谢谢参与',
+                bgColor:'#fcf9f0',
+                img: './images/0.png'
+            },
+        ]
+
+        //创建实例    
+        let turntableInstance= new TurntableAward("#translate",list, {width: 400 })
+        turntableInstance.init()
+        
+        // 监听指针点击事件
+        document.querySelector(".pointer").onclick = function(){
+            // translateAnimation(3, 4)
+            let index = parseInt(Math.random() * 5)
+            // 有回调函数
+            // turntableInstance.rotate(  index, 3,4, function(){
+            //     // 覆盖默认回调函数
+            //     console.log('抽中了'+list[index].title)
+            // })
+
+            // 无回调函数
+            turntableInstance.rotate( index,3,  4)
+            
+            // 详看代码默认值
+            // turntableInstance.rotate( index, 3 )
+            // turntableInstance.rotate( index )
+        }
+
+    </script>
+</body>
+</html>
