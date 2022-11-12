@@ -1,0 +1,33 @@
+.turntable{
+    width: 350px;
+    height: calc(468px * 350 / 460);
+    background: url('./images/turnplate-bg.png') top/cover no-repeat;
+    position: relative;
+    border-radius: 50%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.turntable canvas{
+       width: 300px;
+       height: 300px;
+       position: absolute;
+       left: 25px;
+       top: 25px;
+}
+
+/* 重写指针样式 */
+.pointer::after{
+    display: none;
+}
+.pointer{
+    position: absolute;
+    width: 72px;
+    /* width: calc(185px/3); */
+    height: calc(72px * 254 / 185);
+    top: calc(50% - 90px/2 - 10px);
+    left: calc(50% - 46px/2 - 12px);
+    background: url(./images/p9-pointer.png) no-repeat top/cover;
+    border-radius: 50%;
+    z-index: 2;
+}
