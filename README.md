@@ -80,4 +80,5 @@ document.querySelector(".pointer").onclick = function(){
 ```
 
 > 来源：[chenxw  gitee仓库地址](https://gitee.com/ryanchenxw/turntable-lottery.git)
+
 > 来源：[chenxw  github仓库地址](https://github.com/ChenRyan/turntable-lottery)
