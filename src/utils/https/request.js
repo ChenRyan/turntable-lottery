@@ -7,8 +7,6 @@ export default function( config ){
     instance.interceptors.request.use( (config) => {
 
         return config
-    }, error => {
-        console.log(error);
     })
 
     instance.interceptors.response.use( (res) => {
@@ -16,7 +14,7 @@ export default function( config ){
         return res.data
     },
     (err) =>{
-        console.log(error);
+        console.log(err);
     }
     )
 
